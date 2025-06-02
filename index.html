@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALKULASI PERISAI RADIASI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div class="logo">
+      <img class="logo-img" src="assets/foto/logo.png" alt="Logo">
+      <h1 class="logo-title">KALKULASI PERISAI RADIASI</h1>
+    </div>
+
+    <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="index.html" style="text-decoration: underline;">Beranda</a></li>
+        <li><a href="primer.html">Hitung Perisai</a></li>
+		<li><a href="kontak.html">Kontak</a></li>
+      </ul>
+	  
+    </nav>
+  </header>
+
+		<div class="image-block">
+			<img src="assets/foto/sampul.png" alt="Unique Art"/>
+			<h2 class="overlay-text">Ingin menghitung <br> ketebalan <br> Perisai Radiasi?</h2>
+			
+			<div class="overlay-wrapper">
+      <div class="overlay-box" onclick="scrollToSection('section1')">Tentang</div>
+      <div class="overlay-box" onclick="scrollToSection('section2')">Kalkulasi Perisai Radiasi</div>
+	  <div class="overlay-box" onclick="scrollToSection('section3')">Panduan</div>
+	  
+		</div>
+			</div>
+    
+	<div id="section1">
+		<main>		
+		<h2 class="judul">Tentang Website Kalkulasi Perisai Radiasi</h2>
+            <p class="pp">
+                Website ini menggunakan pedoman NCRP Report No. 147 dan menggunakan hasil penelitian Tugas Akhir dari Muhamad Rizqi Yuwanto Hanapi dibimbing oleh Dr. Lukmanda Evan Lubis, S.Si., M.Si., F.Med <a href="https://physics.ui.ac.id/lukmanda-evan/">[1]</a>
+				dan Syahril Siregar, Ph.D <a href="https://physics.ui.ac.id/syahril-siregar/">[2]</a> yang berjudul Rancang Bangun Perangkat Lunak Kalkulasi Perisai Radiasi Radiologi
+				Diagnostik dan Intervensional Berdasarkan Atenuasi Beton Lokal <a href="https://lib.ui.ac.id/detail?id=9999920548522&lokasi=lokal">[LINK]</a>.
+            </p>
+		</main>
+	</div>
+	
+	<div id="section2" class="section">
+		<main>
+		
+		<h2 class="judul">Kalkulasi Perisai Radiasi</h2>
+		<p class="pp">Tujuan dari kalkulasi perisai radiasi adalah untuk menentukan ketebalan perisai yang memadai guna mengurangi kerma udara di suatu area hingga mencapai nilai ≤ P/T. Faktor transmisi [B(x)] didefinisikan sebagai perbandingan antara kerma udara di belakang perisai dengan ketebalan x terhadap kerma udara di lokasi yang sama tanpa perisai. Nilai ini juga dapat dihitung menggunakan rumus berikut:
+		</p>
+		<img class="gambar1" src="assets/foto/rtransmisi.png">
+		
+		<p class="pp">Dengan: Jarak (d) | Occupancy Factor (T) | Workload (W) | Use Factor (U)
+		</p>
+		
+		<p class="pp">Setelah mendapatkan faktor transmisi kita dapat mencari ketebalan perisai (beton) yang dibutuhkan menggunakan kurva berikut ataupun rumus dibawah ini
+		</p>
+		<img class="gambar1" src="assets/foto/kurva.png">
+		<img class="gambar1" src="assets/foto/gambar2.png">
+		
+		<p class="pp">Untuk Radiografi Umum, perisai primer, nilai 𝛼 sebesar 2,651 untuk timbal dan 0,03994 untuk beton, 𝛽 sebesar 16,56 untuk timbal dan 0,1448, dan 𝛾 sebesar 0,4585 untuk timbal dan 0,4231 untuk beton.
+		</p>
+		
+		<p class="pp"> Sumber: National Council on Radiation Protection and Measurements. (2004). Structural shielding design for medical X-ray imaging facilities. National Council on Radiation Protection and Measurement. 
+		</p>
+		
+		<h3 class="ppp">Hasil Penelitian</h3>
+		<p class="pp">Hasil dari pengukuran massa jenis beton komersial di Indonesia dapat dilihat pada diagram dibawah.
+		</p>
+		<img class="gambar1" src="assets/foto/masajenis.png">
+		<img class="gambar1" src="assets/foto/beton.png">
+		
+		<p class="pp">Pengukuran faktor transmisi dibagi menjadi dua bagian yakni perisai primer dan perisai sekunder seperti pada gambar dibawah. Sinar-X dipancarkan dari pesawat sinar-X dengan tegangan tabung 9,6 kVp dan arus tabung 70 mAs. Pada perisai primer luas lapangan yang digunakan dengan bukaan kolimator sekecil mungkin atau narrow beam dengan ukuran sekitar 2 cm × 1 cm pada dosimeter yang berjarak 1 meter dari tabung pesawat sinar-X, sedangkan untuk perisai sekunder luas lapangan yang digunakan sebesar 25 cm × 25 cm pada jarak 1 meter dari kepala pesawat sinar-X.
+		</p>
+		<img class="gambar1" src="assets/foto/primer.png">
+		<img class="gambar1" src="assets/foto/sekunder.png">
+		
+		<p class="pp">Perbandingan kurva hasil fitting antara transmisi dan ketebalan perisai beton 1 dan beton 2 dengan kurva pada NCRP 147
+		</p>
+		<img class="gambar1" src="assets/foto/kurvaprimer.png">
+		<img class="gambar1" src="assets/foto/kurvasekunder.png">
+		
+		</main>
+		</div>
+	
+	<div id="section3">
+		<main>
+		<h2 class="judul">Panduan Penggunaan Website</h2>
+		<h3>1. Memilih Jenis Perisai</h3>
+			<p class="pp">Pada bagian atas halaman, pengguna akan melihat dua tombol pilihan, yaitu <strong>Perisai Primer</strong> dan <strong>Perisai Sekunder</strong>. Tombol yang sedang aktif akan ditandai dengan warna biru.
+				Perisai Primer dan sekunder dapat ditentukan seperti pada gambar dibawah
+			</p>
+			<img class="gambar2" src="assets/foto/ilustrasi.png">
+
+		<h3 class="ppp">2. Input Data Perhitungan Perisai Primer</h3>
+			<p class="pp">Setelah memilih <strong>Perisai Primer</strong>, isi data berikut:</p>
+
+			<table border="1" cellpadding="8" cellspacing="0">
+				<thead>
+				<tr>
+					<th>Kolom</th>
+					<th>Penjelasan</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td><strong>Tipe Modalitas</strong></td>
+					  <td>Pilih tipe modalitas yang digunakan.</td>
+					</tr>
+					<tr>
+					  <td><strong>Use Factor [U]</strong></td>
+					  <td>Pilih use factor, seberapa sering arah radiasi mengenai perisai:<br>- Lantai = 0.89 <br>- Dinding cross-table = 0.09 <br>- Chest Bucky = 1.00 (khusus Rad Room (chest bucky)) <br>- Unspecified wall = 0.02</td>
+					</tr>
+					<tr>
+					  <td><strong>Tipe Hunian [T]</strong></td>
+					  <td>Pilih tingkat hunian ruang di luar ruang radiasi seperti Apotek, Ruang administrasi, dll.
+					</tr>
+					<tr>
+					  <td><strong>Jarak (m)</strong></td>
+					  <td>Jarak dari sumber radiasi ke area yang dilindungi (dalam meter).</td>
+					</tr>
+					<tr>
+					  <td><strong>Jumlah pasien per minggu</strong></td>
+					  <td>Masukan jumlah pasien per minggu</td>
+					</tr>
+					<tr>
+					  <td><strong>Target desain goal (mSv/minggu)</strong></td>
+					  <td>Masukan target dosis maksimal yang diizinkan</td>
+					</tr>
+					<tr>
+					  <td><strong>Material</strong></td>
+					  <td>Pilih material perisai Beton atau Timbal (Pb)</td>
+					</tr>
+					</tbody>
+				</table>
+			</main>
+		</div>
+</body>
+
+<script>
+function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
+}
+
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+
+    <footer>
+        Departemen Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Indonesia, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424
+    </footer>
+</html>

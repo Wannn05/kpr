@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALKULASI PERISAI RADIASI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div class="logo">
+      <img class="logo-img" src="assets/foto/logo.png" alt="Logo">
+      <h1 class="logo-title">KALKULASI PERISAI RADIASI</h1>
+    </div>
+
+    <nav class="navbar">
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="primer.html">Hitung Perisai</a></li>
+		<li><a href="kontak.html" style="text-decoration: underline;">Kontak</a></li>
+      </ul>
+	  
+    </nav>
+	</header>
+<div class="wrapper">
+	<div class="container">
+		<h2>Kontak Kami</h2><br/>
+		<p class="lb">Nama: <a>Muhamad Rizqi Yuwanto Hanapi</a></p>
+		<p class="lb">Email: <a href="mailto:yuwantohanapimr@gmail.com">yuwantohanapimr@gmail.com</a></p>
+		
+	</div>
+	
+	<form action="https://docs.google.com/forms/d/e/1FAIpQLScvHdvO3mSiaAgMP5pnwR_EVH0eTiz-IiDQMalh6guPJ58dCQ/formResponse"
+		  method="POST" target="hidden_iframe" onsubmit="submitAndRedirect(event)">
+	<h2 class="lbl">Form Saran</h2><br/><br/>
+		
+	<label for="nama" class="lbl">Nama:</label><br/>
+	<input type="text" id="nama" name="entry.767684190" placeholder="Nama" required class="inputgform"/><br/><br/>
+
+	<label for="email" class="lbl">Email:</label><br/>
+	<input type="email" id="email" name="entry.1618997823" placeholder="Email" required class="inputgform"/><br/><br/>
+
+	<label for="saran" class="lbl">Saran:</label><br/>
+	<textarea id="saran" name="entry.2041761386" rows="5" placeholder="Saran" requiredclass="inputgform"></textarea><br/><br/>
+	  
+	<button type="submit" class="button1">Kirim</button>
+	</form>
+</div>
+
+	<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <footer>
+        Departemen Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Indonesia, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424
+    </footer>
+	
+	<script>
+function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
+	}
+		
+function submitAndRedirect(event) {
+    // beri waktu submit berjalan dulu
+    setTimeout(function() {
+      window.location.href = 'index.html';
+    }, 1000); // 1 detik delay, bisa disesuaikan
+	}
+	</script>
+
+</body>
+</html>
+
+
+
+	 
+	 
