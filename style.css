@@ -349,9 +349,9 @@ td strong {
         padding: 1rem;
       }
 	  
-	  .overlay-wrapper {
+	.overlay-wrapper {
       position: absolute;
-      top: 13%;
+      top: 16%;
       left: 80%;
       transform: translate(-50%, -50%);
       display: flex;
