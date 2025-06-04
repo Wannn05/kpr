@@ -346,7 +346,7 @@ td strong {
     @media (max-width: 500px) {
       .overlay-box {
         font-size: 1.8vw;
-        padding: 1rem;
+        padding: 0.8rem;
       }
 	  
 	.overlay-wrapper {
