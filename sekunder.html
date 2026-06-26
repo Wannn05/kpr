@@ -42,22 +42,22 @@
 			<div class="form-group">
 				<label for="modaliti">Distribusi beban kerja (workload)</label>
 				<select id="modaliti">
-					<option value="all">Rad Room (all barriers) — semua dinding kecuali lantai &amp; cross-table</option>
-					<option value="chest">Rad Room (chest bucky) — dinding di belakang chest image-receptor</option>
-					<option value="floor">Rad Room (floor or other barriers) — lantai &amp; dinding lain</option>
-					<option value="fluoro">Fluoroscopy Tube (R&amp;F room)</option>
-					<option value="radtube">Rad Tube (R&amp;F room)</option>
+					<option value="all">Rad Room (all barriers) - semua dinding kecuali lantai & cross-table</option>
+					<option value="chest">Rad Room (chest bucky) - dinding di belakang chest image receptor</option>
+					<option value="floor">Rad Room (floor or other barriers) - lantai & dinding lain</option>
+					<option value="fluoro">Fluoroscopy Tube (R/F room)</option>
+					<option value="radtube">Rad Tube (R/F room)</option>
 				</select>
 			</div>
 
 			<div class="form-group">
-				<label for="arah">Arah/jenis radiasi sekunder (K1sec, Tabel 4.7)</label>
+				<label for="arah">Arah/jenis radiasi sekunder</label>
 				<select id="arah">
-					<option value="leak">Leakage saja</option>
-					<option value="side">Side-scatter saja (90°)</option>
+					<option value="leak">Leakage</option>
+					<option value="side">Side-scatter(90°)</option>
 					<option value="leakside" selected>Leakage + side-scatter (90°)</option>
-					<option value="fb">Forward/backscatter saja (135°)</option>
-					<option value="leakfb">Leakage + forward/backscatter (135°) — paling konservatif</option>
+					<option value="fb">Forward/backscatter(135°)</option>
+					<option value="leakfb">Leakage + forward/backscatter</option>
 				</select>
 			</div>
 
@@ -70,14 +70,33 @@
 			</div>
 
 			<div class="form-group">
-				<label for="t">Faktor hunian, T (Tabel 4.1)</label>
+				<label for="t">Faktor hunian, T</label>
 				<select id="t">
-					<option value="1">T = 1 — ruang administrasi, lab, apotek, resepsionis, ruang tunggu berpenjaga, area bermain anak, ruang rontgen sebelah, ruang baca film, ruang perawat, ruang kontrol sinar-X</option>
-					<option value="0.5">T = 1/2 — ruang pemeriksaan/perawatan pasien</option>
-					<option value="0.2">T = 1/5 — koridor, ruang pasien, ruang istirahat staf</option>
-					<option value="0.125">T = 1/8 — pintu koridor</option>
-					<option value="0.05">T = 1/20 — toilet publik, area penjual otomatis, ruang penyimpanan, area luar berkursi, ruang tunggu tanpa pengawasan, ruang tahan pasien</option>
-					<option value="0.025">T = 1/40 — area luar lalu-lintas sesaat, parkir tanpa pengawasan, area drop-off, loteng, tangga, lift tanpa pengawasan, gudang petugas kebersihan</option>
+					<option value="0">Pilih</option>
+                <option value="1">Ruang administrasi</option>
+                <option value="1">Laboratorium</option>
+                <option value="1">Apotek</option>
+                <option value="1">Area tesepsionis</option>
+                <option value="1">Ruang tunggu</option>
+                <option value="1">Area bermain anak (Indoor)</option>
+                <option value="1">Ruang rontgen yang berdekatan</option>
+                <option value="1">Area membaca films</option>
+                <option value="1">Ruang Perawat</option>
+                <option value="1">Ruang kontrol sinar-X</option>
+                <option value="0.5">Ruang pemeriksaan/perawatan pasien</option>
+                <option value="0.2">Koridor</option>
+                <option value="0.2">Ruang pasien</option>
+                <option value="0.2">Ruang tunggu kariyawan</option>
+                <option value="0.2">Ruang istirahat staf</option>
+                <option value="0.125">Pintu koridor</option>
+                <option value="0.05">Toilet publik</option>
+                <option value="0.05">Area penjual otomatis</option>
+                <option value="0.05">Ruang penyimpanan</option>
+                <option value="0.05">Ruang tunggu tanpa pengawasan</option>
+                <option value="0.025">Tangga</option>
+                <option value="0.025">Area luar pejalan kaki/kendaraan</option>
+                <option value="0.025">Lift tanpa pengawasan</option>
+                <option value="0.025">Loteng</option>
 					<option value="custom">Lainnya — isi sendiri</option>
 				</select>
 			</div>
@@ -93,12 +112,12 @@
 			</div>
 
 			<div class="form-group">
-				<label for="n">Pasien per minggu, N</label>
+				<label for="n">Jumlah pasien per minggu</label>
 				<input id="n" type="number" value="100" min="1" step="1" />
 			</div>
 
 			<div class="form-group">
-				<label for="p">Target desain goal, P (mSv/minggu)</label>
+				<label for="p">Target desain goal (mSv/minggu)</label>
 				<input id="p" type="number" value="0.02" min="0.0001" step="0.001" />
 			</div>
 
