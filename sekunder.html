@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KALKULASI PERISAI RADIASI — Perisai Sekunder</title>
+    <title>KALKULASI PERISAI RADIASI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,19 +19,23 @@
       <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
       <ul id="nav-links">
         <li><a href="index.html">Beranda</a></li>
-        <li><a href="primer.html">Hitung Perisai</a></li>
+        <li><a href="primer.html" class="active">Hitung Perisai</a></li>
 		<li><a href="kontak.html">Kontak</a></li>
       </ul>
+	  
     </nav>
   </header>
 
-	<div class="section">
-		<main>
-
-		<h2 class="judul">Kalkulator Perisai Sekunder (NCRP 147)</h2>
-		<p class="pp">
-			Kalkulator ini digunakan untuk menentukan ketebalan perisai sekunder (radiasi bocor/leakage dan radiasi hambur/scatter) berdasarkan pedoman NCRP Report No. 147. Pilih distribusi beban kerja, arah radiasi sekunder, material perisai, faktor hunian, jarak, jumlah pasien per minggu, dan target desain goal, lalu klik <strong>Hitung perisai</strong>.
-		</p>
+    <main>
+        <section>
+            <h2>Pilih yang Ingin Dihitung:</h2>
+			<nav>
+			<ul>
+			<li><button class="button" onclick="window.location.href='primer.html'">Perisai Primer</button></li>
+            <li><button class="buttona" onclick="window.location.href='sekunder.html'">Perisai Sekunder</button></li>
+			</ul>	
+			<nav>
+        </section>
 
 		<div class="form-section">
 
