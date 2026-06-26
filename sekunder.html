@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KALKULASI PERISAI RADIASI</title>
+    <title>KALKULASI PERISAI RADIASI — Perisai Sekunder</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,172 +19,235 @@
       <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
       <ul id="nav-links">
         <li><a href="index.html">Beranda</a></li>
-        <li><a href="primer.html" class="active">Hitung Perisai</a></li>
+        <li><a href="primer.html">Hitung Perisai</a></li>
 		<li><a href="kontak.html">Kontak</a></li>
       </ul>
-	  
     </nav>
   </header>
 
-    <main>
-        <section>
-            <h2>Pilih yang Ingin Dihitung:</h2>
-			<nav>
-			<ul>
-			<li><button class="button" onclick="window.location.href='primer.html'">Perisai Primer</button></li>
-            <li><button class="buttona" onclick="window.location.href='sekunder.html'">Perisai Sekunder</button></li>
-			</ul>	
-			<nav>
-        </section>
+	<div class="section">
+		<main>
 
-        <section class="form-section" >
-            <h3>Input Perhitungan Perisai Sekunder</h3>
-			
+		<h2 class="judul">Kalkulator Perisai Sekunder (NCRP 147)</h2>
+		<p class="pp">
+			Kalkulator ini digunakan untuk menentukan ketebalan perisai sekunder (radiasi bocor/leakage dan radiasi hambur/scatter) berdasarkan pedoman NCRP Report No. 147. Pilih distribusi beban kerja, arah radiasi sekunder, material perisai, faktor hunian, jarak, jumlah pasien per minggu, dan target desain goal, lalu klik <strong>Hitung perisai</strong>.
+		</p>
+
+		<div class="form-section">
+
 			<div class="form-group">
-            <label for="modaliti">Tipe Modalitas:</label>
-            <select id="modaliti">
-                <option>Pilih</option>
-                <option value="bi">Ruang Radiografi Umum [Beton 1] </option>
-				<option value="bii">Radiografi Umum [Beton 2] </option>
-				<option value="all">Rad Room (all barriers) — semua dinding kecuali lantai &amp; cross-table</option>
-     	 		<option value="chest">Rad Room (chest bucky) — dinding di belakang chest image-receptor</option>
-      			<option value="floor">Rad Room (floor or other barriers) — lantai &amp; dinding lain</option>
-      			<option value="fluoro">Fluoroscopy Tube (R&amp;F room)</option>
-     			<option value="radtube">Rad Tube (R&amp;F room)</option>
-
-            </select>
+				<label for="modaliti">Distribusi beban kerja (workload)</label>
+				<select id="modaliti">
+					<option value="all">Rad Room (all barriers) — semua dinding kecuali lantai &amp; cross-table</option>
+					<option value="chest">Rad Room (chest bucky) — dinding di belakang chest image-receptor</option>
+					<option value="floor">Rad Room (floor or other barriers) — lantai &amp; dinding lain</option>
+					<option value="fluoro">Fluoroscopy Tube (R&amp;F room)</option>
+					<option value="radtube">Rad Tube (R&amp;F room)</option>
+				</select>
 			</div>
 
 			<div class="form-group">
-            <label for="modaliti">Arah/jenis radiasi sekunder</label>
-            <select id="modaliti">
-                <option>Pilih</option>
-                <option value="leak">Leakage saja</option>
-      			<option value="side">Side-scatter saja (90°)</option>
-      			<option value="leakside" selected>Leakage + side-scatter (90°)</option>
-      			<option value="fb">Forward/backscatter saja (135°)</option>
-			    <option value="leakfb">Leakage + forward/backscatter (135°) — paling konservatif</option>
-
-            </select>
+				<label for="arah">Arah/jenis radiasi sekunder (K1sec, Tabel 4.7)</label>
+				<select id="arah">
+					<option value="leak">Leakage saja</option>
+					<option value="side">Side-scatter saja (90°)</option>
+					<option value="leakside" selected>Leakage + side-scatter (90°)</option>
+					<option value="fb">Forward/backscatter saja (135°)</option>
+					<option value="leakfb">Leakage + forward/backscatter (135°) — paling konservatif</option>
+				</select>
 			</div>
-			
+
 			<div class="form-group">
-            <label for="t">Tipe Hunian [T]:</label>
-            <select id="t">
-                <option value="0">Pilih</option>
-                <option value="1">Ruang administrasi</option>
-                <option value="1">Laboratorium</option>
-                <option value="1">Apotek</option>
-                <option value="1">Area tesepsionis</option>
-                <option value="1">Ruang tunggu</option>
-                <option value="1">Area bermain anak (Indoor)</option>
-                <option value="1">Ruang rontgen yang berdekatan</option>
-                <option value="1">Area membaca films</option>
-                <option value="1">Ruang Perawat</option>
-                <option value="1">Ruang kontrol sinar-X</option>
-                <option value="0.5">Ruang pemeriksaan/perawatan pasien</option>
-                <option value="0.2">Koridor</option>
-                <option value="0.2">Ruang pasien</option>
-                <option value="0.2">Ruang tunggu kariyawan</option>
-                <option value="0.2">Ruang istirahat staf</option>
-                <option value="0.125">Pintu koridor</option>
-                <option value="0.05">Toilet publik</option>
-                <option value="0.05">Area penjual otomatis</option>
-                <option value="0.05">Ruang penyimpanan</option>
-                <option value="0.05">Ruang tunggu tanpa pengawasan</option>
-                <option value="0.025">Tangga</option>
-                <option value="0.025">Area luar pejalan kaki/kendaraan</option>
-                <option value="0.025">Lift tanpa pengawasan</option>
-                <option value="0.025">Loteng</option>
-				<option value="custom">Lainnya/isi sendiri</option>
-            </select>
-				<input id="tCustom" type="number" value="1" min="0" max="1" step="0.001" placeholder="Masukkan nilai T (0–1)" style="width: 100%; margin-top: 8px; display: none;" />
+				<label for="bahan">Material perisai</label>
+				<select id="bahan">
+					<option value="beton">Beton (concrete)</option>
+					<option value="pb">Timbal (lead, Pb)</option>
+				</select>
 			</div>
-			
+
 			<div class="form-group">
-            <label for="d">Jarak (m):</label>
-            <input id="d" type="number">
+				<label for="t">Faktor hunian, T (Tabel 4.1)</label>
+				<select id="t">
+					<option value="1">T = 1 — ruang administrasi, lab, apotek, resepsionis, ruang tunggu berpenjaga, area bermain anak, ruang rontgen sebelah, ruang baca film, ruang perawat, ruang kontrol sinar-X</option>
+					<option value="0.5">T = 1/2 — ruang pemeriksaan/perawatan pasien</option>
+					<option value="0.2">T = 1/5 — koridor, ruang pasien, ruang istirahat staf</option>
+					<option value="0.125">T = 1/8 — pintu koridor</option>
+					<option value="0.05">T = 1/20 — toilet publik, area penjual otomatis, ruang penyimpanan, area luar berkursi, ruang tunggu tanpa pengawasan, ruang tahan pasien</option>
+					<option value="0.025">T = 1/40 — area luar lalu-lintas sesaat, parkir tanpa pengawasan, area drop-off, loteng, tangga, lift tanpa pengawasan, gudang petugas kebersihan</option>
+					<option value="custom">Lainnya — isi sendiri</option>
+				</select>
 			</div>
-			
+
+			<div class="form-group" id="tCustomGroup" style="display:none;">
+				<label for="tCustom">Nilai T kustom (0–1)</label>
+				<input id="tCustom" type="number" value="1" min="0" max="1" step="0.001" placeholder="Masukkan nilai T (0–1)" />
+			</div>
+
 			<div class="form-group">
-            <label for="n">Jumlah pasien perminggu:</label>
-            <input id="n" type="number">
+				<label for="d">Jarak d (m)</label>
+				<input id="d" type="number" value="2" min="0.1" step="0.1" />
 			</div>
-			
+
 			<div class="form-group">
-            <label for="p">Target desain goal (mSv/perminggu):</label>
-            <input id="p" type="number">
+				<label for="n">Pasien per minggu, N</label>
+				<input id="n" type="number" value="100" min="1" step="1" />
 			</div>
-			
+
 			<div class="form-group">
-            <label for="bahan">Material:</label>
-            <select id="bahan">
-                <option>Pilih</option>
-                <option value="beton">Beton</option>
-                <option value="pb">Timbal</option>
-            </select>
+				<label for="p">Target desain goal, P (mSv/minggu)</label>
+				<input id="p" type="number" value="0.02" min="0.0001" step="0.001" />
 			</div>
-			
-            <button class="button1" onclick="calculate()" >HITUNG</button>
 
-            <div id="result"></div>
-            <div id="result1"></div>
-        </section>
-    </main>
+			<button id="calcBtn" class="button1">Hitung perisai</button>
 
-    <footer>
-        Departemen Fisika Fakultas MIPA Universitas Indonesia, Depok, Jawa Barat 16424
-    </footer>
+		</div>
 
-    <script>
-        function calculate() {
-			var t = document.getElementById('t');
-            var ts = parseFloat(t.value);
-            var p = parseFloat(document.getElementById('p').value);
-            var n = parseFloat(document.getElementById('n').value);
-            var d = parseFloat(document.getElementById('d').value);
-            var modaliti = document.getElementById('modaliti').value;
-            var bahan = document.getElementById('bahan').value;
-			
-			// Validasi input
-            if (!modaliti || !bahan || isNaN(us) || isNaN(ts) || isNaN(p) || isNaN(n) || isNaN(d)) {
-                document.getElementById('result').innerText = "Harap isi semua data dengan benar.";
-                document.getElementById('result1').innerText = "";
-                return;
-			}	
-            var a, be, c, z;
+		<div id="errorBox" style="display:none; text-align:center; color:#b00020; font-weight:bold; margin-top:15px;"></div>
 
-   
-            if (modaliti === "rad1") {
-                if (bahan === "pb") { a = 2.513; be = 17.34; c = 0.4994; z = 0.034; }
-                else { a = 0.03920; be = 0.1464; c = 0.4486; z = 0.034; }
-            } else if (modaliti === "rad2") {
-                if (bahan === "pb") { a = 2.513; be = 17.34; c = 0.4994; z = 0.053; }
-                else { a = 0.03920; be = 0.1464; c = 0.4486; z = 0.034; }
-            } else if (modaliti === "bi") {
-                if (bahan === "pb") { document.getElementById('result').innerText = "Modalitas Ruang Radiografi Umum (Beton 1) khusus untuk material Beton, silakan pilih Beton." }
-                else { a = 0.02711; be = 3.703; c = 2.735; z = 0.034; }
-            } else if (modaliti === "bii") {
-                if (bahan === "pb") { document.getElementById('result').innerText = "Modalitas Ruang Radiografi Umum (Beton 2) khusus untuk material Beton, silakan pilih Beton." }
-                else { a = -93.54; be = 9.372; c = 0.0005999; z = 0.034; }
-            }
-			 
-			
+		<div id="resultGrid" style="display:none;" class="result-grid">
+			<div class="result-card">
+				<p class="result-label">Tebal perisai dibutuhkan</p>
+				<p id="outThickness" class="result-value">—</p>
+			</div>
+			<div class="result-card">
+				<p class="result-label">Tebal komersial terdekat</p>
+				<p id="outCommercial" class="result-value">—</p>
+			</div>
+			<div class="result-card">
+				<p class="result-label">Transmisi B yang dibutuhkan</p>
+				<p id="outB" class="result-value">—</p>
+			</div>
+		</div>
 
-            var xe = (1 / (a * c)) * Math.log(((Math.pow(((n * ts * z) / (p * d * d)), c)) + (be / a)) / (1 + (be / a)));
-            var bbb = (p * d * d) / (z * ts * n );
+		<div id="detailBox" style="display:none;" class="detail-box">
+			<h3 class="ppp">Rincian Perhitungan</h3>
+			<table>
+				<tbody>
+				<tr><td><strong>Faktor hunian, T</strong></td><td id="outT" style="text-align:right;">—</td></tr>
+				<tr><td><strong>K1sec (kerma sekunder per pasien @ 1 m)</strong></td><td id="outK1" style="text-align:right;">—</td></tr>
+				<tr><td><strong>Kerma sekunder tak-terlindung, Ksec(0)</strong></td><td id="outK0" style="text-align:right;">—</td></tr>
+				<tr><td><strong>Parameter fit (α, β, γ)</strong></td><td id="outParams" style="text-align:right;">—</td></tr>
+				</tbody>
+			</table>
+		</div>
 
-            document.getElementById('result').innerText = "Ketebalan perisai yang direkomendasikan: " + xe.toFixed(2) + " mm " + (bahan === "pb" ? "Timbal (Pb)" : "Beton");
-            document.getElementById('result1').innerText = "Besar Transmisi: " + bbb.toFixed(6);
-        }
-    </script>
-	
-	<script>
+		</main>
+	</div>
+
+<script>
 function toggleMenu() {
     const navLinks = document.getElementById('nav-links');
     navLinks.classList.toggle('active');
 }
+
+const DATA = {
+  all:    { label: "Rad Room (all barriers)",
+            k1: { leak: 5.3e-4, side: 3.4e-2, leakside: 3.4e-2, fb: 4.8e-2, leakfb: 4.9e-2 },
+            pb: { a: 2.298, be: 17.38, c: 0.6193 },
+            beton: { a: 0.0361, be: 0.1433, c: 0.5600 } },
+  chest:  { label: "Rad Room (chest bucky)",
+            k1: { leak: 3.9e-4, side: 4.9e-3, leakside: 5.3e-3, fb: 6.9e-3, leakfb: 7.3e-3 },
+            pb: { a: 2.256, be: 13.80, c: 0.8837 },
+            beton: { a: 0.0356, be: 0.1079, c: 0.7705 } },
+  floor:  { label: "Rad Room (floor or other barriers)",
+            k1: { leak: 1.4e-4, side: 2.3e-2, leakside: 2.3e-2, fb: 3.3e-2, leakfb: 3.3e-2 },
+            pb: { a: 2.513, be: 17.34, c: 0.4994 },
+            beton: { a: 0.0392, be: 0.1464, c: 0.4486 } },
+  fluoro: { label: "Fluoroscopy Tube (R&F room)",
+            k1: { leak: 1.2e-2, side: 3.1e-1, leakside: 3.2e-1, fb: 4.4e-1, leakfb: 4.6e-1 },
+            pb: { a: 2.322, be: 12.91, c: 0.7575 },
+            beton: { a: 0.0363, be: 0.0936, c: 0.5955 } },
+  radtube:{ label: "Rad Tube (R&F room)",
+            k1: { leak: 9.4e-4, side: 2.8e-2, leakside: 2.9e-2, fb: 3.9e-2, leakfb: 4.0e-2 },
+            pb: { a: 2.272, be: 13.60, c: 0.7184 },
+            beton: { a: 0.0356, be: 0.1114, c: 0.6620 } }
+};
+
+const PB_SHEETS = [0.5, 0.79, 1.0, 1.58, 2.0, 3.16, 4.0, 5.0, 6.3, 10.0];
+
+function fmt(n, d) {
+  if (!isFinite(n)) return "—";
+  return n.toLocaleString('id-ID', { minimumFractionDigits: d, maximumFractionDigits: d });
+}
+
+function nearestPbSheet(x) {
+  for (const s of PB_SHEETS) if (s >= x) return s;
+  return Math.ceil(x);
+}
+
+const tSelect = document.getElementById('t');
+const tCustomInput = document.getElementById('tCustom');
+const tCustomGroup = document.getElementById('tCustomGroup');
+tSelect.addEventListener('change', () => {
+  tCustomGroup.style.display = tSelect.value === 'custom' ? 'flex' : 'none';
+});
+
+function getT() {
+  if (tSelect.value === 'custom') {
+    return parseFloat(tCustomInput.value);
+  }
+  return parseFloat(tSelect.value);
+}
+
+function calculate() {
+  const errBox = document.getElementById('errorBox');
+  const modKey = document.getElementById('modaliti').value;
+  const arah = document.getElementById('arah').value;
+  const bahan = document.getElementById('bahan').value;
+  const T = getT();
+  const d = parseFloat(document.getElementById('d').value);
+  const N = parseFloat(document.getElementById('n').value);
+  const P = parseFloat(document.getElementById('p').value);
+
+  if (!isFinite(T) || !isFinite(d) || !isFinite(N) || !isFinite(P) || T <= 0 || T > 1 || d <= 0 || N <= 0 || P <= 0) {
+    errBox.style.display = 'block';
+    errBox.textContent = 'Harap isi semua data dengan angka yang valid (T harus antara 0 dan 1, lainnya lebih besar dari nol).';
+    document.getElementById('resultGrid').style.display = 'none';
+    document.getElementById('detailBox').style.display = 'none';
+    return;
+  }
+  errBox.style.display = 'none';
+
+  const row = DATA[modKey];
+  const K1 = row.k1[arah];
+  const fit = row[bahan];
+  const a = fit.a, be = fit.be, c = fit.c;
+
+  const K0 = (K1 * N) / (d * d);
+  const Breq = P / (T * K0);
+
+  let x;
+  if (Breq >= 1) {
+    x = 0;
+  } else {
+    const base = (N * T * K1) / (P * d * d);
+    x = (1 / (a * c)) * Math.log((Math.pow(base, c) + be / a) / (1 + be / a));
+    if (!isFinite(x) || x < 0) x = 0;
+  }
+
+  document.getElementById('resultGrid').style.display = 'grid';
+  document.getElementById('detailBox').style.display = 'block';
+
+  if (bahan === 'pb') {
+    document.getElementById('outThickness').textContent = fmt(x, 2) + ' mm Pb';
+    document.getElementById('outCommercial').textContent = fmt(nearestPbSheet(x), 2) + ' mm Pb';
+  } else {
+    document.getElementById('outThickness').textContent = fmt(x, 1) + ' mm beton';
+    document.getElementById('outCommercial').textContent = fmt(Math.ceil(x / 10) * 10, 0) + ' mm beton';
+  }
+  document.getElementById('outB').textContent = Breq.toExponential(2);
+  document.getElementById('outT').textContent = fmt(T, 3);
+  document.getElementById('outK1').textContent = K1.toExponential(2) + ' mGy/pasien';
+  document.getElementById('outK0').textContent = fmt(K0, 4) + ' mGy/minggu';
+  document.getElementById('outParams').textContent = 'α=' + a + ', β=' + be + ', γ=' + c;
+}
+
+document.getElementById('calcBtn').addEventListener('click', calculate);
+calculate();
 </script>
 
+    <footer>
+        Departemen Fisika Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Indonesia, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424
+    </footer>
 </body>
 </html>
