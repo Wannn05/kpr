@@ -46,9 +46,24 @@
                 <option>Pilih</option>
                 <option value="bi">Ruang Radiografi Umum [Beton 1] </option>
 				<option value="bii">Radiografi Umum [Beton 2] </option>
-				<option value="rad1">Radiografi Umum (Side-Scatter)</option>
-				<option value="rad2">Radiografi Umum (Leakage)</option>
-				
+				<option value="all">Rad Room (all barriers) — semua dinding kecuali lantai &amp; cross-table</option>
+     	 		<option value="chest">Rad Room (chest bucky) — dinding di belakang chest image-receptor</option>
+      			<option value="floor">Rad Room (floor or other barriers) — lantai &amp; dinding lain</option>
+      			<option value="fluoro">Fluoroscopy Tube (R&amp;F room)</option>
+     			<option value="radtube">Rad Tube (R&amp;F room)</option>
+
+            </select>
+			</div>
+
+			<div class="form-group">
+            <label for="modaliti">Arah/jenis radiasi sekunder</label>
+            <select id="modaliti">
+                <option>Pilih</option>
+                <option value="leak">Leakage saja</option>
+      			<option value="side">Side-scatter saja (90°)</option>
+      			<option value="leakside" selected>Leakage + side-scatter (90°)</option>
+      			<option value="fb">Forward/backscatter saja (135°)</option>
+			    <option value="leakfb">Leakage + forward/backscatter (135°) — paling konservatif</option>
 
             </select>
 			</div>
@@ -81,7 +96,9 @@
                 <option value="0.025">Area luar pejalan kaki/kendaraan</option>
                 <option value="0.025">Lift tanpa pengawasan</option>
                 <option value="0.025">Loteng</option>
+				<option value="custom">Lainnya/isi sendiri</option>
             </select>
+				<input id="tCustom" type="number" value="1" min="0" max="1" step="0.001" placeholder="Masukkan nilai T (0–1)" style="width: 100%; margin-top: 8px; display: none;" />
 			</div>
 			
 			<div class="form-group">
