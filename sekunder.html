@@ -133,25 +133,9 @@
 				<p id="outThickness" class="result-value">—</p>
 			</div>
 			<div class="result-card">
-				<p class="result-label">Tebal komersial terdekat</p>
-				<p id="outCommercial" class="result-value">—</p>
-			</div>
-			<div class="result-card">
 				<p class="result-label">Transmisi (B)</p>
 				<p id="outB" class="result-value">—</p>
 			</div>
-		</div>
- 
-		<div id="detailBox" style="display:none;" class="detail-box">
-			<h3 class="ppp">Rincian Perhitungan</h3>
-			<table>
-				<tbody>
-				<tr><td><strong>Faktor okupansi, T</strong></td><td id="outT" style="text-align:right;">—</td></tr>
-				<tr><td><strong>K1sec (kerma sekunder per pasien @ 1 m)</strong></td><td id="outK1" style="text-align:right;">—</td></tr>
-				<tr><td><strong>Kerma sekunder tanpa perisai, Ksec(0)</strong></td><td id="outK0" style="text-align:right;">—</td></tr>
-				<tr><td><strong>Parameter fit (α, β, γ)</strong></td><td id="outParams" style="text-align:right;">—</td></tr>
-				</tbody>
-			</table>
 		</div>
  
 		
@@ -227,7 +211,6 @@ function calculate() {
     errBox.style.display = 'block';
     errBox.textContent = 'Harap isi semua data dengan angka yang valid (T harus antara 0 dan 1, lainnya lebih besar dari nol).';
     document.getElementById('resultGrid').style.display = 'none';
-    document.getElementById('detailBox').style.display = 'none';
     return;
   }
   errBox.style.display = 'none';
@@ -250,20 +233,13 @@ function calculate() {
   }
 
   document.getElementById('resultGrid').style.display = 'grid';
-  document.getElementById('detailBox').style.display = 'block';
 
   if (bahan === 'pb') {
     document.getElementById('outThickness').textContent = fmt(x, 2) + ' mm Pb';
-    document.getElementById('outCommercial').textContent = fmt(nearestPbSheet(x), 2) + ' mm Pb';
   } else {
     document.getElementById('outThickness').textContent = fmt(x, 1) + ' mm beton';
-    document.getElementById('outCommercial').textContent = fmt(Math.ceil(x / 10) * 10, 0) + ' mm beton';
   }
   document.getElementById('outB').textContent = Breq.toExponential(2);
-  document.getElementById('outT').textContent = fmt(T, 3);
-  document.getElementById('outK1').textContent = K1.toExponential(2) + ' mGy/pasien';
-  document.getElementById('outK0').textContent = fmt(K0, 4) + ' mGy/minggu';
-  document.getElementById('outParams').textContent = 'α=' + a + ', β=' + be + ', γ=' + c;
 }
 
 document.getElementById('calcBtn').addEventListener('click', calculate);
